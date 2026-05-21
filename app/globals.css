@@ -1,0 +1,194 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-primary), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-heading: var(--font-primary), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+
+  /* Xtragenius brand colors */
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-navy: var(--brand-navy);
+  --color-brand-dark-navy: var(--brand-dark-navy);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-body: var(--brand-body);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-section-bg: var(--brand-section-bg);
+  --color-brand-cta-bg: var(--brand-cta-bg);
+}
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.267 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.267 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.267 0 0);
+  --primary: oklch(0.666 0.218 41.6);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.973 0.007 247.9);
+  --secondary-foreground: oklch(0.325 0.091 285.2);
+  --muted: oklch(0.975 0 0);
+  --muted-foreground: oklch(0.610 0.050 293.0);
+  --accent: oklch(0.666 0.218 41.6);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.666 0.218 41.6);
+  --radius: 0.3125rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.666 0.218 41.6);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.666 0.218 41.6);
+
+  /* Xtragenius brand tokens */
+  --brand-orange: rgb(255, 102, 0);
+  --brand-navy: #3F3A64;
+  --brand-dark-navy: rgb(37, 26, 108);
+  --brand-muted: rgb(140, 137, 162);
+  --brand-body: rgb(105, 105, 105);
+  --brand-dark: rgb(51, 51, 51);
+  --brand-section-bg: rgb(245, 247, 250);
+  --brand-cta-bg: rgb(248, 248, 248);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-primary), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.74;
+    color: rgb(105, 105, 105);
+  }
+
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Global utility classes matching Xtragenius */
+.text-brand-orange {
+  color: var(--brand-orange);
+}
+
+.text-brand-navy {
+  color: var(--brand-navy);
+}
+
+.text-brand-dark-navy {
+  color: var(--brand-dark-navy);
+}
+
+.text-brand-muted {
+  color: var(--brand-muted);
+}
+
+.text-brand-body {
+  color: var(--brand-body);
+}
+
+.text-brand-dark {
+  color: var(--brand-dark);
+}
+
+.bg-brand-orange {
+  background-color: var(--brand-orange);
+}
+
+.bg-brand-navy {
+  background-color: var(--brand-navy);
+}
+
+.bg-brand-dark-navy {
+  background-color: var(--brand-dark-navy);
+}
+
+.bg-brand-section {
+  background-color: var(--brand-section-bg);
+}
+
+.bg-brand-cta {
+  background-color: var(--brand-cta-bg);
+}
+
+/* Button base */
+.btn-orange {
+  background-color: var(--brand-orange);
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 24px;
+  display: inline-block;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.btn-orange:hover {
+  opacity: 0.9;
+}
+
+/* Mark tag highlight */
+mark {
+  background: transparent;
+  color: var(--brand-orange);
+}
+
+/* Fade-up animation for scroll reveals */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.6s ease forwards;
+}

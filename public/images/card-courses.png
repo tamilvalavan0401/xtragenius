@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="555" viewBox="0 0 400 555">
+  <rect width="400" height="555" fill="#fff5ee"/>
+  <circle cx="200" cy="200" r="80" fill="#ffe0cc"/>
+  <rect x="140" y="300" width="120" height="80" rx="10" fill="#ffe0cc"/>
+  <text x="200" y="440" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#3f3a64">Courses</text>
+</svg>

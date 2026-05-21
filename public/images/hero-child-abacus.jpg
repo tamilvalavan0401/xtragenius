@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="460" viewBox="0 0 460 460">
+  <rect width="460" height="460" rx="230" fill="#f5f0eb"/>
+  <circle cx="230" cy="180" r="60" fill="#e0d5c8"/>
+  <rect x="150" y="260" width="160" height="120" rx="20" fill="#e0d5c8"/>
+  <text x="230" y="420" text-anchor="middle" font-family="Arial" font-size="14" fill="#8c89a2">Child with Abacus</text>
+</svg>
