@@ -96,7 +96,7 @@ export default function CTASection() {
             }}
           >
             Start today for getting{" "}
-            <span style={{ color: "rgb(255, 102, 0)" }}>Online Certification</span>
+            <span className="text-[#ff6600] font-[400]">Online Certification</span>
           </h3>
         </AnimateOnScroll>
 
