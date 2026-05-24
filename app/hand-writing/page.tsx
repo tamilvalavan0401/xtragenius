@@ -6,11 +6,11 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import VedicMathVideo from "@/components/VedicMathVideo";
-import VedicMathCourse from "@/components/vedic-math/VedicMathCourse";
 import VedicMathStatsSection from "@/components/vedic-math/VedicMathStatsSection";
 import { useState, useEffect } from "react";
 import AnimateOnScroll from "@/components/AnimateOnScroll";
 import CTASection from "@/components/CTASection";
+import VedicMathCourse from "@/components/hand-writing/VedicMathCourse";
 
 export default function VedicMathPage() {
 
@@ -39,7 +39,7 @@ export default function VedicMathPage() {
               <span className="text-sm text-[#696969]">
                 <Link href="/" className="transition-colors hover:text-[#ff6600]">Home</Link>
                 <span className="mx-1">/</span>
-                <span>Vedic Math</span>
+                <span>Hand Writing</span>
               </span>
             </nav>
           </div>
@@ -49,7 +49,7 @@ export default function VedicMathPage() {
         <section className="bg-white py-10 text-center">
           <div className="mx-auto max-w-[1200px] px-4">
             <h1 style={{ fontSize: "42px", fontWeight: 700, color: "#333333", margin: 0 }}>
-              Vedic Math
+              Hand Writing
             </h1>
           </div>
         </section>
@@ -71,8 +71,7 @@ export default function VedicMathPage() {
                     className="font-sans font-bold leading-[1.17] text-[#3f3a64]"
                     style={{ fontSize: "48px", width: "460px", maxWidth: "100%" }}
                   >
-                    Learn from the{" "} <br /> leading
-                    <mark className="bg-transparent text-[#ff6600]"> Tutors</mark>
+                    Distant learning for further expansion
                   </h2>
                 </AnimateOnScroll>
 
@@ -87,22 +86,29 @@ export default function VedicMathPage() {
                       maxWidth: "460px",
                     }}
                   >
-                    Our priority is to create a curriculum that generates problem-solving, thinking out of the box and increases the confidence in your children.
+                    Learning is a life-long journey that in fact we never find the terminate stop. Stop searching, enjoy the process.
                   </p>
                 </AnimateOnScroll>
 
                 <AnimateOnScroll delay={300}>
-                  <Link
-                    href="#"
-                    className="flex items-center gap-1 font-semibold text-[#8c89a2] transition-colors duration-[250ms] hover:text-[#ff6600]"
-                    style={{ fontSize: "15px" }}
-                  >
-                    Wanna learn more?&nbsp;&nbsp;{" "}
-                    <span className="font-semibold text-[#ff6600] underline underline-offset-2">
-                      Click here
-                    </span>{" "}
-                    <span className="text-[#ff6600]">→</span>
-                  </Link>
+                  <button className="bg-[#ff6600] hover:bg-[#e65c00] text-white font-medium py-3 px-8 rounded-md flex items-center justify-center gap-3 transition-colors shadow-sm">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                      <polyline points="7 10 12 15 17 10" />
+                      <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download free guide
+                  </button>
                 </AnimateOnScroll>
               </div>
 
@@ -111,11 +117,6 @@ export default function VedicMathPage() {
                 className="relative flex flex-col flex-1 items-center justify-center max-md:order-1 max-md:flex-none max-md:w-full"
                 style={{ minHeight: "580px" }}
               >
-                <p className="">
-                  Vedic maths education helps in developing new and innovative methods of mastering calculations. It builds a strong confident arithmetical base and solves the problems easily. Through Vedic maths, one can divide without using a calculator, multiply two decimal numbers together quickly and easily, and square any number ending in 5 within 5 seconds. Well, this all sounds difficult, but it has been proved that by using this phenomenal method and technique one can successfully win over the fear of “mathematics”.
-                </p>
-
-
 
                 {/* Main circular hero image with subtle border */}
                 <AnimateOnScroll delay={200} className="relative z-[2]">
@@ -124,7 +125,7 @@ export default function VedicMathPage() {
 
                   >
                     <Image
-                      src="/images/vedic-math/hero.jpg"
+                      src="/images/handwriting/hero.jpg"
                       alt="Child learning abacus"
                       fill
                       className="object-cover object-top w-[300px]"
