@@ -6,8 +6,9 @@ import CourseSidebar from "@/components/courses/CourseSidebar";
 import CourseCard from "@/components/courses/CourseCard";
 import { getCourseBySlug, coursesData } from "@/lib/courseData";
 
-export default function CourseDetailPage({ params }: { params: { slug: string } }) {
-  const course = getCourseBySlug(params.slug);
+export default async function CourseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const course = getCourseBySlug(slug);
 
   if (!course) {
     notFound();

@@ -6,16 +6,18 @@ import Footer from "@/components/Footer";
 import ProductCard from "@/components/shop/ProductCard";
 import { productsData, getCategoryName } from "@/lib/data/products";
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const categoryName = getCategoryName(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const categoryName = getCategoryName(slug);
   return {
     title: `${categoryName} - XTRAGENIUS`,
   };
 }
 
-export default function ProductCategoryPage({ params }: { params: { slug: string } }) {
-  const products = productsData[params.slug];
-  const categoryName = getCategoryName(params.slug);
+export default async function ProductCategoryPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const products = productsData[slug];
+  const categoryName = getCategoryName(slug);
 
   // If we don't have mock data for this slug, we can render an empty state instead of 404
   const displayProducts = products || [];

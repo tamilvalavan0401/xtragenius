@@ -8,15 +8,17 @@ import ProductInfo from "@/components/shop/ProductInfo";
 import ProductTabs from "@/components/shop/ProductTabs";
 import { getProductBySlug } from "@/lib/data/products";
 
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-  const product = getProductBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   return {
     title: product ? `${product.name} - XTRAGENIUS` : 'Product Not Found',
   };
 }
 
-export default function ProductDetailsPage({ params }: { params: { slug: string } }) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
 
   if (!product) {
     notFound();
